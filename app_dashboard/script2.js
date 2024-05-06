@@ -44,21 +44,5 @@ $(document).ready(() => {
     $('#btn-cadastrar').on('click', () => {
         alert('Cadastrado com sucesso');
     })
-
-    // Ajax
-    $('#compentencia').on('change', e => {
-        /** testando seleção */
-        // console.log($(e.target).val());
-        let competencia = $(e.target).val()
-        $.ajax({
-            type: 'GET',
-            url: 'app.php',
-            data: `competencia=${competencia}`,
-            dataType: 'json',
-            success: dados => { console.log('sucesso: ' + dados)},
-            error: erro => { console.log('erro: ' + erro)}
-        })
-        
-        
-    })
 })
+

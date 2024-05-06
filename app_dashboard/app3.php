@@ -89,17 +89,11 @@ class Bd{
 $dashboard = new Dashboard();
 $conexao = new Conexao();
 
-$competencia = explode('-', $_GET['competencia']);
-$ano = $competencia['0'];
-$mes = $competencia['1'];
-
-$dias_do_mes = cal_days_in_month(CAL_GREGORIAN, $mes, $ano);
-
-$dashboard-> __set('data_inicio', $ano . '-' . $mes . '-' . '01');
-$dashboard-> __set('data_fim',    $ano . '-' . $mes . '-' . $dias_do_mes);
+$dashboard-> __set('data_inicio', '2018-10-01');
+$dashboard-> __set('data_fim',    '2018-10-31');
 
 $bd = new Bd($conexao, $dashboard);
 
 $dashboard-> __set('numeroVendas', $bd->getNumeroVendas());
 $dashboard-> __set('totalVendas', $bd->getTotalVendas());
-echo json_encode($dashboard);
+print_r($dashboard);
