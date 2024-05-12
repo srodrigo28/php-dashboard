@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<title>Ajax com jQuery</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>	
+		<script defer src="./cadastro.js"></script>
+	</head>
+
+	<body>
+		<div class="container mt-5">
+			<h1 class="bg-primary text-white p-3 text-center mb-3">Cadastro 2</h1>
+	    	<div class="row">
+	    		<div class="col">
+	    			<form>
+	    				<div class="form-group">
+							<input type="text" name="nome" placeholder="Nome" class="form-control" />
+						</div>
+						
+						<div class="form-group">
+							<div class="form-check form-check-inline">
+								<input type="radio" name="sexo" value="feminino" class="form-check-input"><label class="form-check-label mr-3">Feminino</label>
+								<input type="radio" name="sexo" value="masculino" class="form-check-input"><label class="form-check-label mr-3">Masculino</label>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<input type="text" name="email" placeholder="E-mail" class="form-control" />
+						</div>
+						
+						<div class="form-group">
+							<select name="origem" class="form-control">
+								<option value="">-- Onde nos encontrou? --</option>
+								<option value="facebook">Facebook</option>
+								<option value="google">Google</option>
+								<option value="outro_meio">Outro meio</option>
+							</select>
+						</div>
+						
+						<div class="form-group">
+							<div class="form-check form-check-inline">
+								<input type="checkbox" name="interesses[]" value="php" class="form-check-input"><label class="form-check-label mr-3">PHP</label>
+								<input type="checkbox" name="interesses[]" value="js" class="form-check-input"><label class="form-check-label mr-3">JavaScript</label>
+								<input type="checkbox" name="interesses[]" value="NodeJS" class="form-check-input"><label class="form-check-label mr-3">NodeJS</label>
+								<input type="checkbox" name="interesses[]" value="MongoDB" class="form-check-input"><label class="form-check-label mr-3">MongoDB</label>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<textarea name="mensagem" class="form-control"></textarea>
+						</div>
+						
+						<button type="submit" class="btn btn-primary">Enviar</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>

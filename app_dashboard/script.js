@@ -38,7 +38,12 @@ $(document).ready(() => {
 
     $('#cadastro').on('click', () => {
         $('#pagina').load('cadastro.html')
-        console.log('link suporte clicado')
+        console.log('link cadastro clicado')
+    })
+
+    $('#cadastro2').on('click', () => {
+        $('#pagina').load('cadastro2.html')
+        console.log('link cadastro 2 clicado')
     })
 
     $('#btn-cadastrar').on('click', () => {
