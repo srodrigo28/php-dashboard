@@ -30,6 +30,8 @@ class Conexao {
                 "mysql:host=$this->host;dbname=$this->dbname",
                 $this->user,
                 $this->pass
+
+                
             );
             $conexao->exec('set charset utf8');
             return $conexao;
@@ -49,7 +51,6 @@ class Bd{
         $this->dashboard = $dashboard;
         
     }
-    
     public function getNumeroVendas(){
         $query = '
             SELECT
@@ -66,7 +67,6 @@ class Bd{
 
         return $stmt->fetch(PDO::FETCH_OBJ)->numero_vendas;
     }
-
     public function getTotalVendas(){
         $query = '
             SELECT
@@ -95,11 +95,13 @@ $mes = $competencia['1'];
 
 $dias_do_mes = cal_days_in_month(CAL_GREGORIAN, $mes, $ano);
 
-$dashboard-> __set('data_inicio', $ano . '-' . $mes . '-' . '-01');
-$dashboard-> __set('data_fim',    $ano . '-' . $mes . '-' . $dias_do_mes);
+$dashboard-> __set('data_inicio', $ano.'-'.$mes.'-'.'-01');
+$dashboard-> __set('data_fim',    $ano.'-'.$mes.'-'.$dias_do_mes);
 
 $bd = new Bd($conexao, $dashboard);
 
 $dashboard-> __set('numeroVendas', $bd->getNumeroVendas());
 $dashboard-> __set('totalVendas', $bd->getTotalVendas());
-echo json_encode($dashboard);
+// echo json_encode($dashboard);
+//print_r($ano. '/'. '/'. $dias_do_mes);
+print_r($dashboard);

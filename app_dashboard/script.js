@@ -44,21 +44,24 @@ $(document).ready(() => {
     $('#btn-cadastrar').on('click', () => {
         alert('Cadastrado com sucesso');
     })
-
     // Ajax
     $('#compentencia').on('change', e => {
         /** testando seleção */
-        // console.log($(e.target).val());
         let competencia = $(e.target).val()
+        // console.log(competencia);
+
         $.ajax({
             type: 'GET',
             url: 'app.php',
             data: `competencia=${competencia}`,
             dataType: 'json',
-            success: dados => { console.log('sucesso: ' + dados)},
-            error: erro => { console.log('erro: ' + erro)}
+            success: dados => { 
+                $('#numeroVendas').html(dados.numeroVendas)
+                $('#totalVendas').html(dados.totalVendas)
+                console.log(dados.numeroVendas, dados.totalVendas) 
+            },
+            error: erro => { console.log(erro)}
         })
-        
         
     })
 })
